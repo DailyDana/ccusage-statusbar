@@ -2,9 +2,9 @@
 
 Shows your Claude Code usage in the VS Code status bar, so you can keep an eye on it while using the Claude Code panel (where the CLI status line is not shown).
 
-```
-🔥 $3.29 block · 4h 21m | today $125.27
-```
+![Status bar](images/statusbar.png)
+
+![Tooltip](images/tooltip.png)
 
 - **Status bar:** cost of the active 5-hour block, time left in it, and today's total.
 - **Tooltip:** burn rate, projected block cost, per-model breakdown for today, this month's total and daily average.
