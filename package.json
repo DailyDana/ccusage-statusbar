@@ -1,0 +1,68 @@
+{
+  "name": "ccusage-statusbar",
+  "displayName": "ccusage Status Bar",
+  "description": "Shows your Claude Code usage (active 5-hour block, today and this month) in the VS Code status bar via ccusage.",
+  "version": "0.3.0",
+  "publisher": "dailydana",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DailyDana/ccusage-statusbar"
+  },
+  "bugs": {
+    "url": "https://github.com/DailyDana/ccusage-statusbar/issues"
+  },
+  "homepage": "https://github.com/DailyDana/ccusage-statusbar#readme",
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "claude",
+    "claude code",
+    "ccusage",
+    "usage",
+    "cost",
+    "status bar"
+  ],
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "ccusageBar.refresh",
+        "title": "ccusage: Refresh now"
+      }
+    ],
+    "configuration": {
+      "title": "ccusage Status Bar",
+      "properties": {
+        "ccusageBar.command": {
+          "type": "string",
+          "default": "ccusage",
+          "description": "ccusage command (use the full path if it is not on PATH)."
+        },
+        "ccusageBar.intervalMinutes": {
+          "type": "number",
+          "default": 5,
+          "minimum": 1,
+          "description": "Refresh interval in minutes."
+        },
+        "ccusageBar.timezone": {
+          "type": "string",
+          "default": "",
+          "description": "IANA timezone for day/month grouping (e.g. Europe/Istanbul). Empty uses the system time."
+        },
+        "ccusageBar.showMonthInBar": {
+          "type": "boolean",
+          "default": false,
+          "description": "Also show this month's total in the status bar (it is always in the tooltip)."
+        }
+      }
+    }
+  }
+}
